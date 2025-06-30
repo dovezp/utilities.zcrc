@@ -4,19 +4,6 @@
 
 ZCRC is a high-performance CRC (Cyclic Redundancy Check) calculation library. This project serves as an excellent example of modern C++ design patterns, template metaprogramming, and performance optimization techniques.
 
-
-## Performance Benchmarks
-
-| Method | Speed | Memory | Use Case |
-|--------|--------|---------|----------|
-| **RAM** | 🟡 Medium | 🟢 Low | Dynamic/variable algorithms |
-| **ROM** | 🟢 Fast | 🟡 Medium | Standard production use |
-| **META** | 🟢 Fast | 🟢 Low | Compile-time known strings |
-| **TPL** | ⚡ **Zero Cost** | 🟢 Low | Template parameters |
-
-*Template calculations have **zero runtime overhead** - computed entirely at compile-time!*
-
-
 ## Quick Start
 
 ### Basic Usage
@@ -25,19 +12,17 @@ Include `ZCRC{8,16,32,64}.h` and `ZCRCTables.h` into your project.
 
 ```cpp
 #include "ZCRC/ZCRC32.h"
+
 using namespace utilities::zcrc;
 
-// Simple runtime calculation
 std::string data = "Hello, World!";
 auto crc = crc32::rom::calculate(
     reinterpret_cast<const uint8_t*>(data.c_str()), 
     data.length()
 );
 
-// Compile-time calculation (zero runtime cost)
 constexpr auto compile_time_crc = crc32::rom::meta::calculate("Hello, World!");
 
-// API hashing for dynamic imports (common in security tools)
 constexpr uint32_t kernel32_hash = crc32::rom::tpl::calculate<
     'k','e','r','n','e','l','3','2','.','d','l','l'>::value;
 ```
