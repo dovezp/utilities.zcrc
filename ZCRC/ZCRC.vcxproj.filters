@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="ZCRC8.h" />
+    <ClInclude Include="ZCRC16.h" />
+    <ClInclude Include="ZCRC32.h" />
+    <ClInclude Include="ZCRC64.h" />
+    <ClInclude Include="ZCRCTables.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ZCRCTables.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

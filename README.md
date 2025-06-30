@@ -42,6 +42,22 @@ constexpr uint32_t kernel32_hash = crc32::rom::tpl::calculate<
     'k','e','r','n','e','l','3','2','.','d','l','l'>::value;
 ```
 
+### Build Requirements
+
+- **Visual Studio 2022** (v143 toolset)
+- **C++17** or later
+- **Windows 10 SDK**
+- **Google Test** (for testing)
+
+### Building
+```cmd
+# Open in Visual Studio
+start Utilities.ZCRC.sln
+
+# Or build from command line
+msbuild Utilities.ZCRC.sln /p:Configuration=Release /p:Platform=x64
+```
+
 ### License
 This project operates under the [Apache License 2.0 (Apache-2.0)](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)). Please refer to the [LICENSE.md](./LICENSE.md) file for detailed information.
 
